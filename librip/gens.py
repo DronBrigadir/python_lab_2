@@ -11,8 +11,29 @@ import random
 # field(goods, 'title', 'price') должен выдавать {'title': 'Ковер', 'price': 2000}, {'title': 'Диван для отдыха', 'price': 5300}
 
 def field(items, *args):
-    assert len(args) > 0
-    # Необходимо реализовать генератор 
+    assert len(args) > 0, 'Enter arguments'
+    if len(args) == 1:
+        tmp = []
+        for x in items:
+            try:
+                value = x[args[0]]
+            except KeyError as e:
+                print("Wrong key in args: '{}'".format(e.args[0]))
+                return
+            if not (value is None):
+                tmp.append(value)
+        print(str(tmp)[1:-1])
+    else:
+        tmp = []
+        for x in items:
+            try:
+                tmp.append({key: x[key] for key in args if not (x[key] is None)})
+            except KeyError as e:
+                print("Wrong key in args: '{}'".format(e.args[0]))
+                return
+        print(*tmp, sep=', ')
+
+
 
 
 # Генератор списка случайных чисел
