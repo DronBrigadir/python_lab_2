@@ -22,7 +22,6 @@ def field(items, *args):
                 return
             if not (value is None):
                 tmp.append(value)
-        print(str(tmp)[1:-1])
     else:
         tmp = []
         for x in items:
@@ -31,7 +30,7 @@ def field(items, *args):
             except KeyError as e:
                 print("Wrong key in args: '{}'".format(e.args[0]))
                 return
-        print(*tmp, sep=', ')
+    return tmp
 
 
 

@@ -9,7 +9,8 @@ goods = [
     {'title': 'Вешалка для одежды', 'price': 800, 'color': 'white'}
 ]
 
-field(goods, 'title')
-field(goods, 'title', 'price')
+print(str(field(goods, 'title'))[1:-1])
+print(*field(goods, 'title', 'price'), sep=', ')
+
 print(*gen_random(2, 5, 7), sep=', ')
 # Реализация задания 1
