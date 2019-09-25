@@ -41,5 +41,5 @@ def field(items, *args):
 # gen_random(1, 3, 5) должен выдать примерно 2, 2, 3, 2, 1
 # Hint: реализация занимает 2 строки
 def gen_random(begin, end, num_count):
-    pass
+    return list([random.randint(begin, end) for x in range(num_count)])
     # Необходимо реализовать генератор
