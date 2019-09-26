@@ -6,3 +6,12 @@
 #   sleep(5.5)
 #
 # После завершения блока должно вывестись в консоль примерно 5.5
+import contextlib
+from time import time
+
+
+@contextlib.contextmanager
+def timer():
+    time_now = time()
+    yield
+    print(format(time() - time_now, '.1f'))
