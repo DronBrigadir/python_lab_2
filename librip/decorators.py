@@ -35,3 +35,16 @@
 # test_4
 # 1
 # 2
+
+def print_result(func):
+    def wrapper():
+        print(func.__name__)
+        tmp = func()
+        if isinstance(tmp, list):
+            print(*tmp, sep='\n')
+        elif isinstance(tmp, dict):
+            [print('{} = {}'.format(key, value)) for key, value in tmp.items()]
+        else:
+            print(tmp)
+        return tmp
+    return wrapper
