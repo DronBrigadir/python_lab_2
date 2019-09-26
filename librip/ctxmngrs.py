@@ -14,4 +14,4 @@ from time import time
 def timer():
     time_now = time()
     yield
-    print(format(time() - time_now, '.1f'))
+    print(format(time() - time_now, '.10f'))
