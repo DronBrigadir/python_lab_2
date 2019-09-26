@@ -36,10 +36,11 @@
 # 1
 # 2
 
+
 def print_result(func):
-    def wrapper():
+    def wrapper(arg):
         print(func.__name__)
-        tmp = func()
+        tmp = func(arg)
         if isinstance(tmp, list):
             print(*tmp, sep='\n')
         elif isinstance(tmp, dict):
